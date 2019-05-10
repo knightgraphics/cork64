@@ -62,22 +62,24 @@ std::ostream &err();
 // Use ERROR to print an error message tagged with the given file/line #
 #ifndef CORK_ERROR
 #define CORK_ERROR(message) { \
-    std::cerr << "error at " \
-              << __FILE__ << ", line #" << __LINE__ << ": " \
-              << (message) << std::endl; \
-    err()     << "error at " \
-              << __FILE__ << ", line #" << __LINE__ << ": " \
-              << (message) << std::endl; \
 }
+//    std::cerr << "error at " \
+//              << __FILE__ << ", line #" << __LINE__ << ": " \
+//              << (message) << std::endl; \
+//    err()     << "error at " \
+//              << __FILE__ << ", line #" << __LINE__ << ": " \
+//              << (message) << std::endl; \
+//}
 #endif // CORK_ERROR
 
 // Use MARKER for debugging to create a trace of control flow...
 #ifndef MARKER
 #define MARKER(message) { \
-    std::cout << "marker at " \
-              << __FILE__ << ", line #" << __LINE__ << ": " \
-              << (message) << std::endl; \
 }
+//   std::cout << "marker at " \
+//              << __FILE__ << ", line #" << __LINE__ << ": " \
+//              << (message) << std::endl; \
+//}
 #endif // MARKER
 
 // ***********
