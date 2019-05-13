@@ -25,7 +25,7 @@
 // +-------------------------------------------------------------------------
 #pragma once
 
-#ifdef WIN32
+#if 0 //def WIN32
 #define DLLEXPORT __declspec(dllexport)
 #else
 #define DLLEXPORT
@@ -43,7 +43,9 @@ DLLEXPORT struct CorkTriMesh
     uint    n_triangles;
     uint    n_vertices;
     uint    *triangles;
-    double  *vertices;
+
+    // Originally this was float, but we use double
+    double   *vertices;
 };
 
 DLLEXPORT void freeCorkTriMesh(CorkTriMesh *mesh);
