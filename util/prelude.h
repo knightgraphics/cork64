@@ -54,7 +54,7 @@ std::ostream &err();
         err()     << "ENSURE FAILED at " \
                   << __FILE__ << ", line #" << __LINE__ << ":\n" \
                   << "    " << #STATEMENT << std::endl; \
-        exit(1); \
+        throw std::runtime_error("cork failed: " #STATEMENT); \
     } \
 }
 #endif // ENSURE

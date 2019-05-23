@@ -210,6 +210,9 @@
 
 /* #define SINGLE */
 
+#include <exception>
+#include <sstream>
+
 #ifdef SINGLE
 #define REAL float
 #else /* not SINGLE */
@@ -1415,7 +1418,10 @@ __int64 status;
 #endif /* not ANSI_DECLARATORS */
 
 {
-  exit(status);
+  //exit(status);
+    std::stringstream err;
+    err << "Triangle failed (status " << status << ").";
+    throw std::runtime_error(err.str());
 }
 
 #ifdef ANSI_DECLARATORS
@@ -3265,9 +3271,9 @@ void info()
 
 void internalerror()
 {
-  printf("  Please report this bug to jrs@cs.berkeley.edu\n");
-  printf("  Include the message above, your input data set, and the exact\n");
-  printf("    command line you used to run Triangle.\n");
+  //printf("  Please report this bug to jrs@cs.berkeley.edu\n");
+  //printf("  Include the message above, your input data set, and the exact\n");
+  //printf("    command line you used to run Triangle.\n");
   triexit(1);
 }
 
