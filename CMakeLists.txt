@@ -60,7 +60,11 @@ add_definitions(
 
 #add_definitions(-DDLLEXPORT)
 
-add_library(cork64 ${cork_SRC})
+if(NOT CMAKE_DEBUG_POSTFIX)
+  set(CMAKE_DEBUG_POSTFIX _d)
+endif()
+
+add_library(cork64 SHARED ${cork_SRC})
 
 #link mpir
 target_link_libraries(cork64 mpir)

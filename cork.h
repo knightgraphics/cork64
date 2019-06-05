@@ -25,7 +25,7 @@
 // +-------------------------------------------------------------------------
 #pragma once
 
-#if 0 //def WIN32
+#ifdef WIN32
 #define DLLEXPORT __declspec(dllexport)
 #else
 #define DLLEXPORT
